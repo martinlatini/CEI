@@ -5,12 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      h1 {
+        color: green;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" defer></script>
   </head>
   <body>
-    <p>Hola, Mundo!</p>
-
+    <p style="background-color: blue; font-size: 16px">Hola, Mundo!</p>
+    <h1 id="encabezado-principal">Heading 1</h1>
+    <h1>Heading 2</h1>
+    <h1>Heading 3</h1>
+    <h1>Heading 4</h1>
     <ol>
-      <li>PHP</li>
+      <li class="destacado">PHP</li>
       <li>Ruby</li>
       <li>Java</li>
     </ol>
@@ -53,6 +63,11 @@
       ><br />
       <a href="mailto:mlatini50@gmail.com">Mail</a>
       <br />
+
+      <p class="destacado">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, sunt.
+      </p>
+
       <p>
         <strong>Lorem ipsum </strong> dolor sit amet consectetur adipisicing
         elit. <em><u>Ex aliquid consectetur tempora </u></em>veniam aspernatur
@@ -87,5 +102,9 @@
       <br />
       <input type="submit" value="Enviar" />
     </form>
+    <div id="container">
+      <p class="text">Esto es un párrafo dentro de un div.</p>
+    </div>
+    <p class="text">Esto es un párrafo dentro de un div.</p>
   </body>
 </html>
