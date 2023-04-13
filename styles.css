@@ -1,0 +1,38 @@
+p {
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.destacado {
+    background-color: yellow;
+    font-weight: 700;
+}
+
+#encabezado-principal {
+    color: darkblue;
+    font-size: 32px;
+}
+
+ol li {
+    font-style: italic;
+}
+
+ul > li {
+    list-style: square;
+}
+
+a[href="https://"] {
+    color: orange
+}
+
+p {
+    color: blue;
+}
+
+.text {
+    color: red;
+}
+
+div#container .text {
+    color: green;
+}
