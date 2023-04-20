@@ -344,7 +344,7 @@ const ordenar = (a, b) => {if (a.name > b.name) {
 const obj = people.sort(ordenar)
 
 console.log(obj);
-*/
+
 
 const cart = [
     { product: 'Apple', price: 1, quantity: 3 },
@@ -357,3 +357,121 @@ const sumaTotal = cart.reduce((accumulator, currentValue) => {
 }, 0);
 
 console.log(sumaTotal);
+*/
+
+//1. Desestructura el array para obtener las tres primeras frutas y guardarlas en variables individuales.
+
+//const fruits = ["apple", "banana", "cherry", "orange", "grape"];
+
+//const [fruit1, fruit2, fruit3] = fruits;
+
+//console.log(fruit1, fruit2, fruit3);
+
+// 2. Desestructura el objeto para obtener el firstName, lastName y age. Crea una variable llamada name
+// que contenga el nombre completo.
+/*
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+  city: "New York",
+};
+
+const { firstName, lastName, age } = person;
+const name = firstName + " " + lastName;
+
+console.log(firstName, lastName, age);
+console.log("nombre completo:", name);
+
+// 3. Desestructura el objeto data para obtener el nombre y el precio del primer producto.
+
+const data = {
+  results: [
+    {
+      id: 1,
+      name: "Product 1",
+      price: 100,
+    },
+    {
+      id: 2,
+      name: "Product 2",
+      price: 200,
+    },
+  ],
+};
+
+const { results } = data;
+
+console.log(
+  `el producto del primer objeto es: ${results[0].name}, y su precio es: ${results[0].price}`
+);
+
+//4. Utiliza el Spread Operator para crear un nuevo array que combine los elementos de array1 y array2.
+
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+
+const arrayCombinado = [...array1, ...array2];
+
+console.log(arrayCombinado);
+
+//5. Utiliza el Spread Operator para crear un nuevo objeto que combine las propiedades de obj1 y obj2.
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 4 };
+
+const obj3 = { ...obj1, ...obj2 };
+
+console.log(obj3);
+
+//6. Utiliza el Spread Operator para clonar el objeto user y actualizar la propiedad location a "Londres".
+
+const user = {
+  name: "Alice",
+  age: 25,
+  location: "París",
+};
+
+const userActualizado = { ...user, location: "Londres" };
+
+console.log(userActualizado);
+
+
+// 1.
+function simpleTimer(seconds) {
+  setTimeout(() => {
+    console.log("Tiempo cumplido");
+  }, seconds);
+}
+
+simpleTimer(1000);
+
+//2.
+let contador = 0;
+
+function stopwatch(duration) {
+  let interval = setInterval(() => {
+    if (contador >= duration) {
+      clearInterval(interval);
+    } else {
+      console.log(contador++ + 1);
+    }
+  }, 1000);
+}
+
+stopwatch(5);
+*/
+//3.
+
+function messageInterval(messages, interval) {
+  let contador = 0;
+  const intervalID = setInterval(() => {
+    if (contador < messages.length) {
+      console.log(messages[contador++]);
+    } else {
+      clearInterval(intervalID);
+    }
+  }, interval);
+}
+
+messageInterval(["hola", "como", "estas", "bien", "vos"], 1000);
