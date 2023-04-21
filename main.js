@@ -460,7 +460,7 @@ function stopwatch(duration) {
 }
 
 stopwatch(5);
-*/
+
 //3.
 
 function messageInterval(messages, interval) {
@@ -475,3 +475,128 @@ function messageInterval(messages, interval) {
 }
 
 messageInterval(["hola", "como", "estas", "bien", "vos"], 1000);
+
+//4.
+
+function progressiveDelay(messages) {
+  let contador = 0;
+  let timer = 1000;
+  const intervalo = setInterval(() => {
+    if (contador < messages.length) {
+      console.log(messages[contador++]);
+    } else {
+      clearInterval(intervalo);
+    }
+  }, timer);
+}
+
+progressiveDelay(["hola", "chau", "bonjour", "hello"]);
+*/
+/*
+//5.
+function textAnimation(text, speed) {
+  let contador2 = 0;
+  array = text.split("");
+  const intervalo2 = setInterval(() => {
+    if (contador2 < array.length) {
+      console.log(array[contador2++]);
+    } else {
+      clearInterval(intervalo2);
+    }
+  }, speed);
+}
+
+textAnimation("hello", 500);
+
+
+//promesas
+//1.
+
+const promise = new Promise((resolve, reject) => {
+  let randomTime = Math.ceil(Math.random() * 5000);
+  setTimeout(() => {
+    resolve(`Se tardo ${randomTime}ms en resolver`);
+  }, randomTime);
+});
+
+promise.then((result) => {
+  console.log(result);
+});
+
+//2.
+
+function promesaEntero(n) {
+  const promise2 = new Promise((resolve, reject) => {
+    if (n % 2 === 0) {
+      resolve(console.log(`${n} al cuadrado es igual a`, Math.pow(n, 2)));
+    } else if (!n % 2 === 0) {
+      reject(`Error, ${n} es impar`);
+    }
+  });
+
+  promise2
+    .then((result2) => {
+      console.log(result2);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+
+//1.
+
+function fetchData() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ id: 1, name: "John Doe", age: 25 });
+    }, 1000);
+  });
+}
+
+async function getUserData() {
+  const userData = await fetchData();
+  console.log(userData);
+}
+
+//2.
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(`Promesa resuelta`);
+    }, ms);
+  });
+}
+
+async function delayedMessage() {
+  console.log("primer mensaje");
+  const sleepMessage = await sleep(2000);
+  console.log(sleepMessage);
+}
+
+delayedMessage();
+
+
+//3.
+
+function uncertainOperation() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      Math.random() > 0.5
+        ? resolve("Operación exitosa")
+        : reject("Operación fallida");
+    }, 1500);
+  });
+}
+
+async function tryOperation() {
+  try {
+    const resultado = await uncertainOperation();
+    console.log(resultado);
+  } catch (error) {
+    console.log("mensaje de error");
+  }
+}
+
+tryOperation();
+*/
