@@ -599,4 +599,133 @@ async function tryOperation() {
 }
 
 tryOperation();
+
+
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+
+Car.prototype.getCarInfo = function () {
+  console.log(
+    `this is a ${this.make}, model ${this.model} of the year ${this.year} `
+  );
+};
+
+const honda = new Car("honda", "civic", 1990);
+const renault = new Car("renault", "scenic", 1994);
+
+honda.getCarInfo();
+renault.getCarInfo();
+
+//
+
+function Circle(radius) {
+  this.radius = radius;
+}
+
+Circle.prototype.area = function () {
+  return Math.PI * this.radius ** 2;
+};
+
+Circle.prototype.circumference = function () {
+  return 2 * Math.PI * this.radius;
+};
+
+const circulo = new Circle(30);
+
+const area = circulo.area();
+const circunferencia = circulo.circumference();
+
+console.log(area, circunferencia);
+
+//Función del area: Math.PI * (radio**2)
+//Función circunferencia: 2 * Math.PI * radio
+
+function BankAccount(accountNumber, balance) {
+  this.accountNumber = accountNumber;
+  this.balance = balance;
+}
+
+BankAccount.prototype.deposit = function (valor) {
+  this.balance = this.balance + valor;
+};
+
+BankAccount.prototype.withdraw = function (valorWithdraw) {
+  if (valorWithdraw < this.balance) {
+    this.balance = this.balance - valorWithdraw;
+  } else {
+    console.log("No puedes retirar mas de lo que hay en la cuenta");
+  }
+};
+
+BankAccount.prototype.getBalance = function () {
+  console.log(`Usted dispone de ${this.balance} euros.`);
+};
+
+const cuenta1 = new BankAccount(1234, 500);
+
+cuenta1.deposit(500);
+cuenta1.getBalance();
+cuenta1.withdraw(400);
+cuenta1.getBalance();
+cuenta1.withdraw(700);
+cuenta1.getBalance();
+
+
+class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  speak() {
+    console.log(`Hola! Mi nombre es ${this.name} y tengo ${this.age} años.`);
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, age) {
+    super(name, age);
+  }
+
+  bark() {
+    console.log("Guau, guau!");
+  }
+}
+
+const animal1 = new Animal("miguel", 4);
+animal1.speak();
+
+const dog1 = new Dog("chispas", 3);
+dog1.bark();
+
 */
+
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  fullName() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+class Employee extends Person {
+  constructor(firstName, lastName, jobTitle) {
+    super(firstName, lastName);
+    this.jobTitle = jobTitle;
+  }
+
+  introduce() {
+    console.log(
+      `Hola! Mi nombre es ${this.fullName()}, y soy ${this.jobTitle}.`
+    );
+  }
+}
+
+const persona1 = new Person("Ricardo", "Gomez");
+const empleado = new Employee("Marcos", "Serra", "Desarrollador");
