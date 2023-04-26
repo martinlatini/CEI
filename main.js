@@ -701,7 +701,7 @@ animal1.speak();
 const dog1 = new Dog("chispas", 3);
 dog1.bark();
 
-*/
+
 
 class Person {
   constructor(firstName, lastName) {
@@ -729,3 +729,38 @@ class Employee extends Person {
 
 const persona1 = new Person("Ricardo", "Gomez");
 const empleado = new Employee("Marcos", "Serra", "Desarrollador");
+
+
+
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+  .then((response) =>
+    console.log(response.json().then((result) => console.log(result)))
+  )
+  .catch((error) => console.log(error));
+*/
+
+const newPost = {
+  title: "Mi nuevo post",
+  body: "Este es el contenido de mi nuevo post.",
+  userId: 1,
+};
+
+const options = {
+  method: "post",
+  body: JSON.stringify(newPost),
+};
+
+async function postData() {
+  const fetchData = await fetch(
+    "https://jsonplaceholder.typicode.com/posts",
+    options
+  )
+    .then((response) => {
+      return response.json();
+    })
+    .then((respuesta) => {
+      console.log(respuesta);
+    });
+}
+
+postData();
