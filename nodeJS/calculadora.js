@@ -14,7 +14,7 @@ function multiplicacion(a, b) {
   return a * b;
 }
 
-module.export = {
+module.exports = {
   suma,
   resta,
   division,
