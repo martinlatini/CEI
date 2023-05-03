@@ -28,6 +28,7 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
+<<<<<<< HEAD
 const express = require("express");
 console.log("express", express);
 
@@ -62,6 +63,13 @@ const server = http.createServer((req, res) => {
   const contentType = getContentType(req.url);
   res.writeHead(200, { "Content-Type": `${contentType}; charset=UTF-8` });
   readStream.pipe(res);
+=======
+const server = http.createServer((req, res) => {
+  const ruta = path.join(__dirname, "public", req.url);
+  const readStream = fs.ReadStream(ruta, "utf-8");
+  res.writeHead(200, { "Content-Type": "text/html" });
+  res.end(readStream);
+>>>>>>> 4c2addcd00b5d3dea9b4fd1884c7f07ef7f4c741
 });
 
 server.listen(3000, () => {
