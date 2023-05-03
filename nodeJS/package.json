@@ -1,0 +1,14 @@
+{
+  "name": "servidor-web",
+  "version": "1.0.0",
+  "description": "Servidor web para servir ficheros HTML, CSS, y JS.",
+  "main": "copy.js",
+  "scripts": {
+    "start": "node copy.js"
+  },
+  "author": "Martin Latini",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
